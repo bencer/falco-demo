@@ -1,0 +1,11 @@
+{
+    "name": "bad-rest-api",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+	"express": "~4.0.0",
+        "body-parser": "1.15.2"
+    }
+}
