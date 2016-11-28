@@ -3,6 +3,7 @@ This builds an scenario for showing Sysdig Falco, exploiting incorrect input pas
 
 run the scenario:
 ```
+vagrant init bencer/dirtycow
 vagrant up
 vagrant ssh
 cd /vagrant/nodejs/bad-rest-api
